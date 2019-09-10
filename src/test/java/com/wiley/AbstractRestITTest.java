@@ -4,6 +4,7 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.request;
 import static org.hamcrest.core.IsEqual.equalTo;
 
+import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.common.mapper.TypeRef;
 import io.restassured.http.ContentType;
@@ -11,13 +12,14 @@ import io.restassured.specification.RequestSpecification;
 import java.util.Collection;
 import java.util.List;
 
-public class AbstractRestITTest {
+abstract class AbstractRestITTest {
 
-  RequestSpecification getSpecification() {
+  static RequestSpecification getSpecification() {
     return new RequestSpecBuilder()
         .setContentType(ContentType.JSON)
         .setAccept(ContentType.JSON)
-        .setBaseUri("https://www.wiley.com/en-us/search/autocomplete/comp_00001H9J?term=Java")
+        .setBaseUri("https://www.wiley.com")
+            .setBasePath("/en-us/search/autocomplete/comp_00001H9J")
         .build();
   }
 
