@@ -2,3 +2,5 @@
 .idea/
 
 target/test-classes/com/wiley/
+
+*.iml
