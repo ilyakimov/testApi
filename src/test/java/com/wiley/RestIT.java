@@ -5,19 +5,12 @@ import static org.awaitility.Awaitility.await;
 import static org.hamcrest.Matchers.matchesPattern;
 
 import com.fasterxml.jackson.databind.JsonNode;
-
-
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.util.Random;
-
 import java.util.concurrent.TimeUnit;
-import org.awaitility.Awaitility;
 import org.junit.Assert;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import javax.imageio.ImageIO;
 
 class RestIT extends AbstractRestITTest {
